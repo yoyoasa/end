@@ -89,7 +89,7 @@ we trained this glove embedding for 100 epochs and reached a descent loss (9.974
 
 #### Using these pretrained embeddings
 
-1. While building vocabulary for answers we added these pretrained embedding vocabelory
+1. While building vocabulary for answers we added these pretrained embedding vocabulary
     ```
     Answer.build_vocab(train_data, vectors=torchtext.vocab.Vectors("./python_code_glove_embedding_300.txt"), min_freq=2)
     ```
@@ -98,4 +98,67 @@ we trained this glove embedding for 100 epochs and reached a descent loss (9.974
     ```
     glove_pretrained_embeddings = Answer.vocab.vectors
     model.decoder.tok_embedding.weight.data = glove_pretrained_embeddings.to(device)
+    ```
+
+We also experimented with embeddings size of 50, 100, 250 but they din't work well so finally ended using 300 dimension embeddings
+
+### Hyper parameters
+
+We experimented with a couple nuber of hyper parameters
+
+1. First approach was to get a stable network which is powefull enough or has a capacity to learn souch a complex dataset. We started with a small network and then with a number of experiments er reached at a network with  following parameter
+
+    ```
+    INPUT_DIM: 1451
+    OUTPUT_DIM: 3299
+    HID_DIM: 300
+    ENC_LAYERS: 4
+    DEC_LAYERS: 4
+    ENC_HEADS: 5
+    DEC_HEADS: 5
+    ENC_PF_DIM: 512
+    DEC_PF_DIM: 512
+    ENC_DROPOUT: 0.1
+    DEC_DROPOUT: 0.1
+    ```
+
+2. After finalizing on network size we experimented on batch size which is optimal enough for network to learn better, experiment included batch size ranging from `4` to `512` and finally ended up with `32` as optimal batch size for network
+
+3. One of the most important hyper parameter is learning rate which took a bit of time for us to arrive a a good number, we experimented a number of sterategy but finally ended up with one cucle lr as the best suited for us. To fine tune one cycle `lr` we used grid search with manual numbers we use following lines of code to add manual one cycle lr 
+
+    ```
+    # One cycle schedule with custome function
+    schedule = np.interp(np.arange(N_EPOCHS+1), [0, 5, 20, N_EPOCHS], [LEARNING_RATE, MAX_LR, LEARNING_RATE/5.0, LEARNING_RATE/10.0])
+    def lr_schedules(epoch):
+        return schedule[epoch+1]
+    ```
+
+    Also added following code to training loop to update learning rate based on epochs
+
+    ```
+    optimizer.param_groups[0]['lr'] = lr_schedules(epoch)
+    ```
+
+    Finally after multiple iterations we ended up with following numbers
+
+    ```
+    LEARNING_RATE: 0.0005
+    MAX_LR: 0.001
+    N_EPOCHS: 24
+    CLIP: 1
+    STEPS_PER_EPOCH: 220
+    ```
+
+    then we used these numbers in pytorch onc cycle lr sterategy with linear analying to train our network
+
+    ```
+    scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer, max_lr=MAX_LR, steps_per_epoch=STEPS_PER_EPOCH, epochs=N_EPOCHS, anneal_strategy='linear')
+    ```
+
+    Also we added following code after optimizer step to step scheduler after every batch
+
+    ```
+    optimizer.step()
+    
+    scheduler.step()
     ```
