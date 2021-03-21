@@ -294,3 +294,13 @@ We trained our networ a couple number of times and we saved some of logs as best
     Epoch: 24 | Time: 0m 14s
         Train Loss: 0.452 | Train PPL:   1.571
         Val. Loss: 0.286 |  Val. PPL:   1.331
+
+
+### Some of example outputs
+
+1.  addition of two number
+    ```
+    def add(num1,num2):
+        sum=num1+num2
+        return sum
+    ```
