@@ -304,3 +304,84 @@ We trained our networ a couple number of times and we saved some of logs as best
         sum=num1+num2
         return sum
     ```
+
+2. write a python program that would print"Hello World" ####
+    ```
+    unicodestring=u"hello world!"
+    print(unicodestring)
+    ```
+
+3. program that would merge two dictionaries by adding the second one into the first
+    ```
+    a={"a":1,"b":2,"c":3}
+    b={"c":4,"d":3}
+    a.update(b)
+    ```
+
+4. python program that asks for user input and prints the given input
+    ```
+    a=input("user input")
+    print(a)
+    ```
+
+5. square of a given input number
+    ```
+    def square(x):
+        return x**2
+    ```
+
+6. sum of first n natural numbers,where n is the input
+    ```
+    def <unk>(n):
+        if n<=0:
+            return n
+        else:
+            return n+sum_of_nums(n-1)
+    ```
+
+7. input list sorted in descending order
+    ```
+    def sort_descending(list_to_be_sorted):
+        return sorted(list_to_be_sorted,reverse=true)
+    ```
+
+8. write a python program that would print the first n positive integers using a for loop
+    ```
+    def reverse_integer(n):
+        if n<=0:
+            return n
+        else:
+            return n+recursive_sum(n-1)
+    ```
+
+9. write a python fuction to create an empty list
+    ```
+    def emptylist():
+        return list()
+    ```
+
+10. write a python function to add elements of two lists
+    ```
+    def append_lists(l1:list,l2:list)->list:
+        return l1.extend(l2)
+    ```
+
+11. sum of two number
+    ```
+    def add_two_numbers(num1,num2):
+        sum=num1+num2
+        return sum
+    ```
+
+12. write a python function that accepts a dictionary that has unique values and returns its inversion
+    ```
+    def invert_dict(input_dict):
+        my_inverted_dict={value:key for key,value in input_dict.items()}
+        return my_inverted_dict
+    ```
+
+13. write a python function that accepts a list of dictionaries and sorts it by a specified key
+    ```
+    def sort_dict_list(dict_list,sort_key):
+        dict_list.sort(key=lambda item:item.get(sort_key))
+    ```
