@@ -175,7 +175,6 @@ To get a better and robust network we used a thirdparty dataset called `conala` 
 
 We trained our networ a couple number of times and we saved some of logs as best logs you can find some of them [here](/logs), the best one for us was the one which I want to highlight here
 
-    ```
     Learning Rate: 4e-05
     Epoch: 01 | Time: 0m 15s
         Train Loss: 4.714 | Train PPL: 111.482
@@ -295,4 +294,3 @@ We trained our networ a couple number of times and we saved some of logs as best
     Epoch: 24 | Time: 0m 14s
         Train Loss: 0.452 | Train PPL:   1.571
         Val. Loss: 0.286 |  Val. PPL:   1.331
-    ```
