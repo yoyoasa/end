@@ -13,7 +13,7 @@ First and the formost process in any machine learning problem is to look into da
 
 Following are some of the rules used for cleaning up dataset
 1. `Manually Preprocess Data ie remove any extra '# ' from data set`
-2. ` def` -> `def`
+2. `<space> def` -> `def`
 3. `#write` -> `# write`
 4. `\n#\s?\d+` -> `\n# `  // Convert all numbered statements to un numbered
 5. `\d+\.\s?\n# write` -> `# write`
@@ -85,3 +85,17 @@ It is already proven that using pretrained embedding makes network learn faster 
 we trained this glove embedding for 100 epochs and reached a descent loss (9.974439516472449e-13)
 
 ![Loss Graph](assets/loss.png)
+
+
+#### Using these pretrained embeddings
+
+1. While building vocabulary for answers we added these pretrained embedding vocabelory
+    ```
+    Answer.build_vocab(train_data, vectors=torchtext.vocab.Vectors("./python_code_glove_embedding_300.txt"), min_freq=2)
+    ```
+
+2. After applying initial weights we updated decoder embeddings with pretrained embeddings
+    ```
+    glove_pretrained_embeddings = Answer.vocab.vectors
+    model.decoder.tok_embedding.weight.data = glove_pretrained_embeddings.to(device)
+    ```
