@@ -84,4 +84,4 @@ It is already proven that using pretrained embedding makes network learn faster 
 
 we trained this glove embedding for 100 epochs and reached a descent loss (9.974439516472449e-13)
 
-[Loss Graph](assets/loss.png)
+![Loss Graph](assets/loss.png)
