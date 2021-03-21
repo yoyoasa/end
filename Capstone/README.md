@@ -104,7 +104,7 @@ We also experimented with embeddings size of 50, 100, 250 but they din't work we
 
 ### Hyper parameters
 
-We experimented with a couple nuber of hyper parameters
+We experimented with a couple number of hyper parameters
 
 1. First approach was to get a stable network which is powefull enough or has a capacity to learn souch a complex dataset. We started with a small network and then with a number of experiments er reached at a network with  following parameter
 
@@ -159,6 +159,6 @@ We experimented with a couple nuber of hyper parameters
 
     ```
     optimizer.step()
-    
+
     scheduler.step()
     ```
