@@ -385,3 +385,175 @@ We trained our networ a couple number of times and we saved some of logs as best
     def sort_dict_list(dict_list,sort_key):
         dict_list.sort(key=lambda item:item.get(sort_key))
     ```
+
+14. write a funtion that accepts two lists of equal length and converts them into a dictioinary 
+    ```
+    def list_to_dict(list1,list2):
+        return dict(zip(list1,list2))
+    ```
+
+15. write a program to print number of characters in a string
+    ```
+    str1="pynative"
+    digitcount=0
+    for i in range(0,len(str1)):
+        char=str1[i]
+        if(char.isdigit()):
+            digitcount+=1
+    print('number of digits:',digitcount)
+    ```
+
+16. write a function to check if a lower case letter exists in a given string
+    ```
+    def check_lower(str1):
+        for char in str1:
+            k=char.islower()
+            if k==true:
+                return true
+        return false
+    ```
+
+17. write function for finding the derivative of sine angle
+    ```
+    import math
+    def sin(angle):
+        return math.cos(angle)
+    ```
+
+18. write a Python function To Calculate Volume OF Cylinder
+    ```
+    def cal_cylinder_volume(height,radius):
+        pi=3.14
+        return pi*radius*height*height
+    ```
+
+19. write program to find if given co-ordinates are inside circle
+    ```
+    import math
+    radius=5
+    print(f'area:{math.pi*radius}')
+    ```
+
+20. write function for factorial using reduce
+    ```
+    def factorial(n):
+        if n==1:
+            return n
+        else:
+            return n*factorial(n-1)
+    ```
+
+21. write function for datetime
+    ```
+    from datetime import datetime
+    date_string="feb 25 2020   4:20pm"
+    datetime_object=datetime.strptime(date_string,'%b%d%y%i:%m%p')
+    print(datetime_object)
+    ```
+
+22. write function to return the cubes of a list of numbers
+    ```
+    def cube(l):
+        return[i***i for i in range(l)]
+    ```
+
+23. write function to find the area of a circle
+    ```
+    def findarea(r):
+        pi=3.142
+        return pi*r*r
+    ```
+
+24. write function to add even mubers in a list
+    ```
+    def add_even_num(l1,l2):
+        return[i*j for i in l1 if i%2==0]
+    ```
+
+25. write ReLu function
+    ```
+    def relu(x:list)->float:
+        return x if x<0 else x
+    ```
+
+26. write function to return the squares of a list of numbers
+    ```
+    def <unk>(nums):
+        return[i*i for i in nums]
+    ```
+
+27. write function to return the nth fibonacci number
+    ```
+    def fib(n):
+        if n<=1:
+            return n
+        else:
+            return n+fib(n-1)
+    ```
+
+28. write a program to Shuffle a list randomly
+    ```
+    from random import shuffle
+    mylist=[3,6,7,8]
+    shuffle(mylist)
+    print(mylist)
+    ```
+
+29. write a program to Test if string starts with H
+    ```
+    word="hello world"
+    check=word.startswith('h')
+    print(f"string starts with h?:{check}")
+    ```
+
+30. write a program to Replacing a string with another string
+    ```
+    str1="hello!it is a good thing"
+    substr1="good"
+    substr2="bad"
+    replaced_str=str1.replace(substr1,substr2)
+    print("string after replace:",str1)
+    ```
+
+31. write a program to Join Two Sets
+    ```
+    a={1,2,3,4,5}
+    b={4,5,6,7,8}
+    print(a & b)
+    ```
+
+32. write a program to keep only the items that are present in both sets
+    ```
+    x={"apple","banana","cherry"}
+    y={"google","microsoft","apple"}
+    x.intersection_update(y)
+    print(f"duplicate value in two set:{x}")
+    ```
+
+33. write Program to Find HCF 
+    ```
+    def compute_hcf(x,y):
+        if x>y:
+            smaller=y
+        else:
+            smaller=x
+        for i in range(1,smaller+1):
+            if((((x%i==0))and(y%i==0)):
+                hcf=i
+        return hcf
+    ```
+    
+34. write Program to Find LCM
+    ```
+    def compute_lcm(x,y):
+        if x>y:
+            greater=x
+        else:
+            greater=y
+        while(true):
+            if((greater%x==0)and(greater%y==0)):
+                lcm=greater
+                break
+            greater+=1
+        return lcm
+    ```
