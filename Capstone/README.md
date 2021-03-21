@@ -162,3 +162,137 @@ We experimented with a couple number of hyper parameters
 
     scheduler.step()
     ```
+
+### Optimizer and Loss Function
+
+We tried with different functions but notting worked better than the default ones, we tried label smoothing but it made not a big difference as results were not so great
+
+
+### Dataset extension
+
+To get a better and robust network we used a thirdparty dataset called `conala` dataset this is open sourse dataset, this gave us a very beautiful improvement on accuracy for out existing data.
+### Training Logs
+
+We trained our networ a couple number of times and we saved some of logs as best logs you can find some of them [here](/logs), the best one for us was the one which I want to highlight here
+
+    ```
+    Learning Rate: 4e-05
+    Epoch: 01 | Time: 0m 15s
+        Train Loss: 4.714 | Train PPL: 111.482
+        Val. Loss: 2.634 |  Val. PPL:  13.923
+
+    Learning Rate: 0.0001734175615919141
+    Epoch: 02 | Time: 0m 14s
+        Train Loss: 2.548 | Train PPL:  12.787
+        Val. Loss: 2.080 |  Val. PPL:   8.004
+
+    Learning Rate: 0.0003068351231838282
+    Epoch: 03 | Time: 0m 14s
+        Train Loss: 2.130 | Train PPL:   8.417
+        Val. Loss: 1.785 |  Val. PPL:   5.960
+
+    Learning Rate: 0.00044025268477574227
+    Epoch: 04 | Time: 0m 14s
+        Train Loss: 1.886 | Train PPL:   6.595
+        Val. Loss: 1.597 |  Val. PPL:   4.938
+
+    Learning Rate: 0.0005736702463676564
+    Epoch: 05 | Time: 0m 14s
+        Train Loss: 1.711 | Train PPL:   5.532
+        Val. Loss: 1.476 |  Val. PPL:   4.374
+
+    Learning Rate: 0.0007070878079595705
+    Epoch: 06 | Time: 0m 13s
+        Train Loss: 1.593 | Train PPL:   4.919
+        Val. Loss: 1.313 |  Val. PPL:   3.716
+
+    Learning Rate: 0.0008405053695514845
+    Epoch: 07 | Time: 0m 13s
+        Train Loss: 1.505 | Train PPL:   4.502
+        Val. Loss: 1.250 |  Val. PPL:   3.489
+
+    Learning Rate: 0.0009739229311433986
+    Epoch: 08 | Time: 0m 13s
+        Train Loss: 1.418 | Train PPL:   4.130
+        Val. Loss: 1.131 |  Val. PPL:   3.097
+
+    Learning Rate: 0.0009521105811688312
+    Epoch: 09 | Time: 0m 13s
+        Train Loss: 1.294 | Train PPL:   3.646
+        Val. Loss: 1.007 |  Val. PPL:   2.738
+
+    Learning Rate: 0.0008925870097402597
+    Epoch: 10 | Time: 0m 13s
+        Train Loss: 1.174 | Train PPL:   3.234
+        Val. Loss: 0.914 |  Val. PPL:   2.494
+
+    Learning Rate: 0.0008330634383116884
+    Epoch: 11 | Time: 0m 13s
+        Train Loss: 1.077 | Train PPL:   2.934
+        Val. Loss: 0.826 |  Val. PPL:   2.284
+
+    Learning Rate: 0.0007735398668831169
+    Epoch: 12 | Time: 0m 13s
+        Train Loss: 0.990 | Train PPL:   2.691
+        Val. Loss: 0.764 |  Val. PPL:   2.146
+
+    Learning Rate: 0.0007140162954545454
+    Epoch: 13 | Time: 0m 13s
+        Train Loss: 0.925 | Train PPL:   2.521
+        Val. Loss: 0.697 |  Val. PPL:   2.008
+
+    Learning Rate: 0.0006544927240259741
+    Epoch: 14 | Time: 0m 14s
+        Train Loss: 0.867 | Train PPL:   2.379
+        Val. Loss: 0.655 |  Val. PPL:   1.924
+
+    Learning Rate: 0.0005949691525974027
+    Epoch: 15 | Time: 0m 14s
+        Train Loss: 0.809 | Train PPL:   2.245
+        Val. Loss: 0.584 |  Val. PPL:   1.794
+
+    Learning Rate: 0.0005354455811688312
+    Epoch: 16 | Time: 0m 15s
+        Train Loss: 0.752 | Train PPL:   2.121
+        Val. Loss: 0.532 |  Val. PPL:   1.702
+
+    Learning Rate: 0.00047592200974025986
+    Epoch: 17 | Time: 0m 13s
+        Train Loss: 0.698 | Train PPL:   2.011
+        Val. Loss: 0.474 |  Val. PPL:   1.607
+
+    Learning Rate: 0.0004163984383116884
+    Epoch: 18 | Time: 0m 13s
+        Train Loss: 0.654 | Train PPL:   1.923
+        Val. Loss: 0.445 |  Val. PPL:   1.561
+
+    Learning Rate: 0.0003568748668831169
+    Epoch: 19 | Time: 0m 13s
+        Train Loss: 0.608 | Train PPL:   1.836
+        Val. Loss: 0.399 |  Val. PPL:   1.490
+
+    Learning Rate: 0.00029735129545454555
+    Epoch: 20 | Time: 0m 13s
+        Train Loss: 0.571 | Train PPL:   1.770
+        Val. Loss: 0.363 |  Val. PPL:   1.438
+
+    Learning Rate: 0.00023782772402597407
+    Epoch: 21 | Time: 0m 13s
+        Train Loss: 0.529 | Train PPL:   1.697
+        Val. Loss: 0.338 |  Val. PPL:   1.402
+
+    Learning Rate: 0.0001783041525974026
+    Epoch: 22 | Time: 0m 15s
+        Train Loss: 0.500 | Train PPL:   1.649
+        Val. Loss: 0.308 |  Val. PPL:   1.361
+
+    Learning Rate: 0.00011878058116883124
+    Epoch: 23 | Time: 0m 15s
+        Train Loss: 0.472 | Train PPL:   1.603
+        Val. Loss: 0.294 |  Val. PPL:   1.341
+
+    Learning Rate: 5.9257009740259765e-05
+    Epoch: 24 | Time: 0m 14s
+        Train Loss: 0.452 | Train PPL:   1.571
+        Val. Loss: 0.286 |  Val. PPL:   1.331
+    ```
