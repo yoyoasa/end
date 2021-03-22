@@ -557,3 +557,15 @@ We trained our networ a couple number of times and we saved some of logs as best
             greater+=1
         return lcm
     ```
+
+
+### Referencs
+1. https://www.kaggle.com/kuldeep7688/simple-rnn-using-glove-embeddings-in-pytorch
+2. https://www.kaggle.com/isbhargav/guide-to-pytorch-learning-rate-scheduling
+3. https://medium.com/@martinpella/how-to-use-pre-trained-word-embeddings-in-pytorch-71ca59249f76
+4. https://androidkt.com/pre-train-word-embedding-in-pytorch/
+5. https://towardsdatascience.com/pre-trained-word-embeddings-or-embedding-layer-a-dilemma-8406959fd76c
+6. https://nlpython.com/implementing-glove-model-with-pytorch/
+7. https://docs.python.org/3/library/tokenize.html
+8. https://towardsdatascience.com/fine-tune-glove-embeddings-using-mittens-89b5f3fe4c39
+9. https://stackoverflow.com/questions/51012476/spacy-custom-tokenizer-to-include-only-hyphen-words-as-tokens-using-infix-regex
