@@ -59,7 +59,6 @@ As ths is a unique dataset where there are a couple number of special characters
 
 To cater to these needs we had to write out custom tokenizer extending `spacy` tokenizer
 
-    ```
     from spacy.util import compile_prefix_regex, compile_infix_regex, compile_suffix_regex
     from spacy.tokenizer import Tokenizer
 
@@ -92,7 +91,6 @@ To cater to these needs we had to write out custom tokenizer extending `spacy` t
         Tokenizes Code text from a string into a list of strings
         """
         return [tok.text for tok in spacy_ans.tokenizer(text)]
-    ```
 
 ## Pretrained Embeddings
 
