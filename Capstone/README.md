@@ -1,7 +1,7 @@
 # Capstone Project
 
 
-### Data Cleaning
+## Data Cleaning
 
 First and the formost process in any machine learning problem is to look into data, the dataset consista of questions and their equivalent codes
 
@@ -31,7 +31,7 @@ Following are some of the rules used for cleaning up dataset
 17. `Split each program into pairs of statement and code`
 18. `(#.program|#.write)`
 
-### Tokenization
+## Tokenization
 
 As ths is a unique dataset where there are a couple number of special characters and other keywords which needs to be together
 
@@ -76,7 +76,7 @@ To cater to these needs we had to write out custom tokenizer extending `spacy` t
         return [tok.text for tok in spacy_ans.tokenizer(text)]
     ```
 
-### Pretrained Embeddings
+## Pretrained Embeddings
 
 It is already proven that using pretrained embedding makes network learn faster and converge easier with a less number ot epochs
 
@@ -102,7 +102,7 @@ we trained this glove embedding for 100 epochs and reached a descent loss (9.974
 
 We also experimented with embeddings size of 50, 100, 250 but they din't work well so finally ended using 300 dimension embeddings
 
-### Hyper parameters
+## Hyper parameters
 
 We experimented with a couple number of hyper parameters
 
@@ -163,15 +163,15 @@ We experimented with a couple number of hyper parameters
     scheduler.step()
     ```
 
-### Optimizer and Loss Function
+## Optimizer and Loss Function
 
 We tried with different functions but notting worked better than the default ones, we tried label smoothing but it made not a big difference as results were not so great
 
 
-### Dataset extension
+## Dataset extension
 
 To get a better and robust network we used a thirdparty dataset called `conala` dataset this is open sourse dataset, this gave us a very beautiful improvement on accuracy for out existing data.
-### Training Logs
+## Training Logs
 
 We trained our networ a couple number of times and we saved some of logs as best logs you can find some of them [here](/logs), the best one for us was the one which I want to highlight here
 
@@ -296,7 +296,7 @@ We trained our networ a couple number of times and we saved some of logs as best
         Val. Loss: 0.286 |  Val. PPL:   1.331
 
 
-### Some of example outputs
+## Some of example outputs
 
 1.  addition of two number
     ```
@@ -559,7 +559,7 @@ We trained our networ a couple number of times and we saved some of logs as best
     ```
 
 
-### Referencs
+## Referencs
 1. https://www.kaggle.com/kuldeep7688/simple-rnn-using-glove-embeddings-in-pytorch
 2. https://www.kaggle.com/isbhargav/guide-to-pytorch-learning-rate-scheduling
 3. https://medium.com/@martinpella/how-to-use-pre-trained-word-embeddings-in-pytorch-71ca59249f76
