@@ -9,14 +9,14 @@ Your capstone project is to write a transformer-based model that can write pytho
 4. There is no limit on the number of training epochs or total number of parameters in the model
 5. You should have trained a separate embedding layer for python keywords and paid special attention to whitespaces, colon and other things (like comma etc)
 6. Your model has failed the capstone score if:
-    a. your model fails to do proper indentation
-    b. your model fails to use newline properly
-    c. your model has failed to understand how to use colon (:)
-    d. your model has failed to generate proper python code that can run on a Python interpreter and produce proper results
+    1. your model fails to do proper indentation
+    2. your model fails to use newline properly
+    3. your model has failed to understand how to use colon (:)
+    4. your model has failed to generate proper python code that can run on a Python interpreter and produce proper results
 7. You need to take care of some preprocessing things like:
-    a. the dataset provided is divided into English and "python-code" pairs properly
-    b. the dataset does not have anomalies w.r.t. indentations (like a mixed-use of tabs and spaces, or use of either 4 or 3 spaces, it should be 4 spaces only). Either use tabs only or 4 spaces only, not both
-    c. the length of the "python-code" generated is not out of your model's capacity
+    1. the dataset provided is divided into English and "python-code" pairs properly
+    2. the dataset does not have anomalies w.r.t. indentations (like a mixed-use of tabs and spaces, or use of either 4 or 3 spaces, it should be 4 spaces only). Either use tabs only or 4 spaces only, not both
+    3. the length of the "python-code" generated is not out of your model's capacity
 
 
 ## Data Cleaning
