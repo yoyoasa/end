@@ -1,5 +1,23 @@
 # Capstone Project
 
+## Problem Statement
+Your capstone project is to write a transformer-based model that can write python code (with proper whitespace indentations). Here are the key points:
+
+1. You can find the dataset [here](https://drive.google.com/file/d/1rHb0FQ5z5ZpaY2HpyFGY6CeyDG0kTLoO/view?usp=sharing). There are some 4600+ examples of English text to python code. 
+2. You need to write a transformer-based model that can learn to translate English to Python
+3. You must use transformers with self-attention, multi-head, and scaled-dot product attention in the model
+4. There is no limit on the number of training epochs or total number of parameters in the model
+5. You should have trained a separate embedding layer for python keywords and paid special attention to whitespaces, colon and other things (like comma etc)
+6. Your model has failed the capstone score if:
+    a. your model fails to do proper indentation
+    b. your model fails to use newline properly
+    c. your model has failed to understand how to use colon (:)
+    d. your model has failed to generate proper python code that can run on a Python interpreter and produce proper results
+7. You need to take care of some preprocessing things like:
+    a. the dataset provided is divided into English and "python-code" pairs properly
+    b. the dataset does not have anomalies w.r.t. indentations (like a mixed-use of tabs and spaces, or use of either 4 or 3 spaces, it should be 4 spaces only). Either use tabs only or 4 spaces only, not both
+    c. the length of the "python-code" generated is not out of your model's capacity
+
 
 ## Data Cleaning
 
